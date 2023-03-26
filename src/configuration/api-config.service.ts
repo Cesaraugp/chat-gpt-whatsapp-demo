@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
 import { IAppSettings, IChatGptSettings } from './interfaces';
+import { IWhatsappSettings } from './interfaces/IWhatsapp-settings.interface';
 
 @Injectable()
 export class ApiConfigService {
@@ -13,5 +14,9 @@ export class ApiConfigService {
 
   get chatGptSettings(): IChatGptSettings {
     return this.configService.get('chatGptSettings');
+  }
+
+  get whatsAppSettings(): IWhatsappSettings {
+    return this.configService.get('whatsAppSettings');
   }
 }

@@ -23,10 +23,10 @@ export class ChatgptApiClientService {
           temperature: 0.7,
         },
         {
-          timeout: 5000,
+          timeout: 30000,
         },
       );
-      return completion.data.choices[0];
+      return completion.data;
     } catch (error) {
       if (error.response) {
         console.log(error.response.status);
